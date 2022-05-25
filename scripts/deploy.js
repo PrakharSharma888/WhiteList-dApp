@@ -4,7 +4,7 @@ const hre = require("hardhat");
 async function main() {
 
   const whitelistContract  = await hre.ethers.getContractFactory("Whitelist");
-  const deployedWhitelistContract  = await whitelistContract.deploy(3);
+  const deployedWhitelistContract  = await whitelistContract.deploy(10);
 
   await deployedWhitelistContract.deployed();
 

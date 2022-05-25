@@ -19,6 +19,7 @@ export default function Home() {
     const web3Provider = new providers.Web3Provider(provider);
 
     const { chainId } = await web3Provider.getNetwork();
+    console.log(chainId)
     if (chainId !== 4) {
       window.alert("Change the network to Rinkeby");
       throw new Error("Change network to Rinkeby");
@@ -82,6 +83,7 @@ export default function Home() {
         address
         );
       setJoinedWhitelist(_joinedWhitelist);
+      console.log(_joinedWhitelist)
 
     } catch (err) {
       console.error(err);
@@ -136,7 +138,7 @@ export default function Home() {
       connectWallet() 
     }
   },[walletConnected]);
-
+  
 
   return (
     <div>
@@ -157,7 +159,7 @@ export default function Home() {
           {renderButton()}
         </div>
         <div>
-          <img className={styles.image} src="./crypto-devs.svg" />
+          <img className={styles.image} src="./crypto-devs.svg"/>
         </div>
       </div>
 
